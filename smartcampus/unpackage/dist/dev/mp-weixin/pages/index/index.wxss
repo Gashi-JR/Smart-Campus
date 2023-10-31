@@ -25,12 +25,12 @@
 /* 文章场景相关 */
 .content {
   position: relative;
-  height: 1220rpx;
+  height: 100vh;
 }
 .content .logo {
   position: absolute;
   width: 100%;
-  height: 350rpx;
+  height: 29%;
   border-bottom-left-radius: 55rpx;
   border-bottom-right-radius: 55rpx;
   z-index: -1;
@@ -57,7 +57,7 @@
 }
 .content .profile {
   position: absolute;
-  top: 100rpx;
+  top: 7%;
   display: flex;
   padding-left: 50rpx;
 }
@@ -67,9 +67,9 @@
 .content .water {
   position: absolute;
   border-radius: 40rpx;
-  height: 300rpx;
+  height: 25%;
   width: 550rpx;
-  top: 270rpx;
+  top: 22%;
   box-shadow: 0 10rpx 0 0 #8db1fc;
   left: 100rpx;
 }
@@ -78,15 +78,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 680rpx;
+  top: 57%;
   left: 50rpx;
 }
 .content .feature {
   position: absolute;
   left: 10%;
-  bottom: 0;
+  top: 70%;
   display: flex;
   width: 80%;
   justify-content: space-around;
+  align-items: flex-start;
+}
+.content .feature .feature_item {
+  font-size: 25rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content .feature .feature_item .feature_icon {
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
