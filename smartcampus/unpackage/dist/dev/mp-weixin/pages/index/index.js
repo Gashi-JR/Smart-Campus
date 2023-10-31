@@ -1,5 +1,9 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+if (!Array) {
+  const _component_van_button = common_vendor.resolveComponent("van-button");
+  _component_van_button();
+}
 const _sfc_main = {
   __name: "index",
   setup(__props) {
@@ -8,7 +12,14 @@ const _sfc_main = {
       console.log(11);
     });
     return (_ctx, _cache) => {
-      return {};
+      return {
+        a: common_vendor.p({
+          color: "rgb(84,165,255)",
+          round: true,
+          size: "small",
+          block: true
+        })
+      };
     };
   }
 };
