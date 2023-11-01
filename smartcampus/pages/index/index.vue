@@ -38,7 +38,7 @@
 			<view style="height: 80rpx;width: 4rpx;background-color:rgb(210,210,210);margin-top: 1vh;">
 
 			</view>
-			<view class="feature_item">
+			<view class="feature_item" @click="toCampusPoster">
 				<view class="feature_icon"
 					style="width: 110rpx;height: 110rpx;border-radius: 50%;background-color:rgb(255,139,43) ;margin-bottom: 5vh;">
 
@@ -81,6 +81,13 @@
 			url: '/pages/onlinefix/onlinefix'
 		});
 	}
+	
+	const toCampusPoster= () => {
+		uni.navigateTo({
+			url: '/pages/campusposter/campusposter'
+		});
+	}
+
 </script>
 
 <style lang="scss">

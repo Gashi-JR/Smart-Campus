@@ -16,6 +16,11 @@ const _sfc_main = {
         url: "/pages/onlinefix/onlinefix"
       });
     };
+    const toCampusPoster = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/campusposter/campusposter"
+      });
+    };
     return (_ctx, _cache) => {
       return {
         a: common_vendor.p({
@@ -24,7 +29,8 @@ const _sfc_main = {
           size: "small",
           block: true
         }),
-        b: common_vendor.o(toOnlineFix)
+        b: common_vendor.o(toCampusPoster),
+        c: common_vendor.o(toOnlineFix)
       };
     };
   }

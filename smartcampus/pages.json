@@ -12,6 +12,13 @@
 				"navigationBarTitleText": "网上报修",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path": "pages/campusposter/campusposter",
+			"style": {
+				"navigationBarTitleText": "校园取物",
+				"enablePullDownRefresh": true
+			}
 		}
 	],
 	"globalStyle": {
@@ -23,8 +30,6 @@
 			//这里为方便，全局引入了所有组件，也可以在某个page下单独引用某个组件
 			"van-action-sheet": "/wxcomponents/vant-weapp/dist/action-sheet/index",
 			"van-area": "/wxcomponents/vant-weapp/dist/area/index",
-			// "van-badge": "/wxcomponents/vant-weapp/dist/badge/index",
-			// "van-badge-group": "/wxcomponents/vant-weapp/dist/badge-group/index",
 			"van-button": "/wxcomponents/vant-weapp/dist/button/index",
 			"van-card": "/wxcomponents/vant-weapp/dist/card/index",
 			"van-cell": "/wxcomponents/vant-weapp/dist/cell/index",
@@ -55,7 +60,6 @@
 			"van-submit-bar": "/wxcomponents/vant-weapp/dist/submit-bar/index",
 			"van-swipe-cell": "/wxcomponents/vant-weapp/dist/swipe-cell/index",
 			"van-switch": "/wxcomponents/vant-weapp/dist/switch/index",
-			// "van-switch-cell": "/wxcomponents/vant-weapp/dist/switch-cell/index",
 			"van-tab": "/wxcomponents/vant-weapp/dist/tab/index",
 			"van-tabs": "/wxcomponents/vant-weapp/dist/tabs/index",
 			"van-tabbar": "/wxcomponents/vant-weapp/dist/tabbar/index",
@@ -69,6 +73,7 @@
 			"van-collapse": "/wxcomponents/vant-weapp/dist/collapse/index",
 			"van-collapse-item": "/wxcomponents/vant-weapp/dist/collapse-item/index",
 			"van-picker": "/wxcomponents/vant-weapp/dist/picker/index"
+
 		}
 	},
 	"uniIdRouter": {}

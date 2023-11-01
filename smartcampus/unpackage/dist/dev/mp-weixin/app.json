@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/onlinefix/onlinefix"
+    "pages/onlinefix/onlinefix",
+    "pages/campusposter/campusposter"
   ],
   "usingComponents": {
     "van-action-sheet": "/wxcomponents/vant-weapp/dist/action-sheet/index",
