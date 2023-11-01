@@ -50,12 +50,12 @@
 			<view style="height: 80rpx;width: 4rpx;background-color:rgb(210,210,210);margin-top: 1vh;">
 
 			</view>
-			<view class="feature_item">
+			<view class="feature_item" @click="toOnlineFix">
 				<view class="feature_icon"
 					style="width: 110rpx;height: 110rpx;border-radius: 10rpx;background-color:rgb(57,122,255) ;margin-bottom: 5vh;">
 					<image class="location" src="/static/icons/无需安装.svg"></image>
 				</view>
-				网上保修
+				网上报修
 			</view>
 
 		</view>
@@ -75,6 +75,12 @@
 	onLoad(() => {
 		console.log(11)
 	})
+
+	const toOnlineFix = () => {
+		uni.navigateTo({
+			url: '/pages/onlinefix/onlinefix'
+		});
+	}
 </script>
 
 <style lang="scss">

@@ -11,6 +11,11 @@ const _sfc_main = {
     common_vendor.onLoad(() => {
       console.log(11);
     });
+    const toOnlineFix = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/onlinefix/onlinefix"
+      });
+    };
     return (_ctx, _cache) => {
       return {
         a: common_vendor.p({
@@ -18,7 +23,8 @@ const _sfc_main = {
           round: true,
           size: "small",
           block: true
-        })
+        }),
+        b: common_vendor.o(toOnlineFix)
       };
     };
   }
