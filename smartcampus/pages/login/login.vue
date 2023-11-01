@@ -2,44 +2,41 @@
 <template>
   <view class="login-container">
 	  <view class="container">
-	  <image class="logo" src="/static/_233.png"></image>
+	  <image class="logo" src="/static/icons/微信.svg"></image>
 	  </view>
-    <view class="login-header">
-      <text class="title">登录</text>
-    </view>
-    <view class="input-container">
-      <!-- <van-cell-group>
-        <van-field
-          value="{{ value }}"
-          placeholder="请输入用户名"
-          border="{{ false }}"
-          bind:change="onChange"
-        />
-      </van-cell-group> -->
-      <text class="password-label">密码</text>
-      <input class="password-input" type="password" placeholder="请输入密码" />
-    </view>
+    
     <view class="login-button-container">
-      <button class="login-button" @click="login">微信授权登录</button>
+      <van-button class="login" type="info">微信登录</van-button>
 	  <!-- <van-button type="danger">危险按钮</van-button> -->
     </view>
   </view>
 </template>
 
-<script>
-export default {
-  methods: {
-    login() {
-      // 这里是登录逻辑，需要实现具体的方法来验证用户名和密码是否正确。
-      // 可以调用后端接口进行验证，并将结果返回给小程序。
-    }
-  } 
-}
+<script setup>
+import { ref } from 'vue';
+let value=ref("")
+
 </script>  
 
 <style lang="scss">
 	.login-container {
 	  background-color: #ffffff;
+	}
+	.login{
+		position: absolute;
+		top: 50%;
+		left: 58%;
+		height:9vh;
+		width:300rpx;
+		
+		transform: translate(-50%, -50%);
+	}
+	.login-button-container{
+		margin-top: 2vh;
+		margin-left: 20rpx;
+		margin-right: 20rpx;
+		 position: relative;
+		 height: 10vh; 
 	}
 	
 	.input-container {
@@ -60,16 +57,22 @@ export default {
 	  border: 1px solid #cccccc;
 	}
 	.container {
+		margin-top: 20vh;
+		margin-left: 20rpx;
+		margin-right: 20rpx;
 	     position: relative;
-	     height: 25vh; /* 可根据实际情况调整高度 */
+		 
+	     height: 50vh; /* 可根据实际情况调整高度 */
+		 border: 3rpx solid gray;
+		 border-radius: 20rpx;
 	   }
 	.logo {
 		 position: absolute;
 		     top: 50%;
 		     left: 50%;
 		     transform: translate(-50%, -50%);
-		     width: 100px; /* 根据实际情况调整宽度 */
-		     height: 100px; /* 根据实际情况调整高度 */
+		     width: 500rpx; /* 根据实际情况调整宽度 */
+		     height: 80vh; /* 根据实际情况调整高度 */
 	}
 	
 </style>

@@ -26,6 +26,21 @@
 .login-container {
   background-color: #ffffff;
 }
+.login {
+  position: absolute;
+  top: 50%;
+  left: 58%;
+  height: 9vh;
+  width: 300rpx;
+  transform: translate(-50%, -50%);
+}
+.login-button-container {
+  margin-top: 2vh;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  position: relative;
+  height: 10vh;
+}
 .input-container {
   margin-top: 20px;
 }
@@ -42,17 +57,22 @@
   border: 1px solid #cccccc;
 }
 .container {
+  margin-top: 20vh;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
   position: relative;
-  height: 25vh;
+  height: 50vh;
   /* 可根据实际情况调整高度 */
+  border: 3rpx solid gray;
+  border-radius: 20rpx;
 }
 .logo {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 100px;
+  width: 500rpx;
   /* 根据实际情况调整宽度 */
-  height: 100px;
+  height: 80vh;
   /* 根据实际情况调整高度 */
 }

@@ -11,6 +11,12 @@
 			"style": {
 				"navigationBarTitleText": "用户登录"
 			}
+		},
+		{
+			"path": "pages/login/UserBinding",
+			"style": {
+				"navigationBarTitleText": "绑定班级/学号"
+			}
 		}
 	],
 

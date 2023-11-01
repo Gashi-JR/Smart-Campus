@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/login/login"
+    "pages/login/login",
+    "pages/login/UserBinding"
   ],
   "usingComponents": {
     "van-action-sheet": "/wxcomponents/vant-weapp/dist/action-sheet/index",
