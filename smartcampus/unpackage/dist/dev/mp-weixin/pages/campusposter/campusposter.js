@@ -14,7 +14,7 @@ const mine = () => "./mine.js";
 const _sfc_main = {
   __name: "campusposter",
   setup(__props) {
-    let active = common_vendor.ref(0);
+    let active = common_vendor.ref(2);
     return (_ctx, _cache) => {
       return common_vendor.e({
         a: common_vendor.o(($event) => common_vendor.isRef(active) ? active.value = 0 : active = 0),

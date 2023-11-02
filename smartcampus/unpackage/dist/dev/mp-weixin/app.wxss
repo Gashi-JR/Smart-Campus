@@ -13,5 +13,7 @@
 .van-hairline--bottom:after{border-bottom-width:1px}
 .van-hairline--top-bottom:after{border-width:1px 0}
 .van-hairline--surround:after{border-width:1px}
-
+.van-tab--active {
+		color: rgb(0, 157, 255) !important;
+}
 page{--status-bar-height:25px;--top-window-height:0px;--window-top:0px;--window-bottom:0px;--window-left:0px;--window-right:0px;--window-magin:0px}[data-c-h="true"]{display: none !important;}

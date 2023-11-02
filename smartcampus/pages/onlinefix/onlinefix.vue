@@ -12,8 +12,6 @@
 
 </script>
 
-<style lang="scss">
-	.van-tab--active {
-		color: rgb(0, 157, 255) !important;
-	}
+<style lang="scss" scoped>
+
 </style>

@@ -1,1 +1,1 @@
-<view> mine </view>
+<view><van-tabs wx:if="{{r0}}" u-t="m" u-i="536832fc-0" bind:__l="__l" u-p="{{c}}"><van-tab wx:if="{{r0}}" style="padding:20rpx" u-t="m" u-i="536832fc-1,536832fc-0" bind:__l="__l" u-p="{{a}}"></van-tab><van-tab wx:if="{{r0}}" u-t="m" u-i="536832fc-2,536832fc-0" bind:__l="__l" u-p="{{b}}">我的接受</van-tab></van-tabs></view>

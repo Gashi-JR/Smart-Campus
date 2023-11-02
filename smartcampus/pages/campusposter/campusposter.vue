@@ -34,9 +34,9 @@
 	import home from './home.vue'
 	import publish from './publish.vue'
 	import mine from './mine.vue'
-	let active = ref(0)
+	let active = ref(2)
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 </style>

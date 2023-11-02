@@ -90,7 +90,7 @@
 
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.content {
 		position: relative;
 		height: 100vh;
