@@ -1,0 +1,1 @@
+"use strict";const e=require("../../common/vendor.js"),t={};if(!Array){(e.resolveComponent("van-tab")+e.resolveComponent("van-tabs"))()}const r=e._export_sfc(t,[["render",function(t,r){return{a:e.p({title:"申请报修"}),b:e.p({title:"报修须知"}),c:e.p({title:"我的工单"}),d:e.p({swipeable:!0,animated:!0,color:"rgb(0,157,255)",border:!0})}}]]);wx.createPage(r);

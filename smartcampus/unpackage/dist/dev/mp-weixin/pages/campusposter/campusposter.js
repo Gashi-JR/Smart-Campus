@@ -1,5 +1,6 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+const utils_common = require("../../utils/common.js");
 if (!Array) {
   const _component_van_tabbar_item = common_vendor.resolveComponent("van-tabbar-item");
   const _component_van_tabbar = common_vendor.resolveComponent("van-tabbar");
@@ -14,20 +15,27 @@ const mine = () => "./mine.js";
 const _sfc_main = {
   __name: "campusposter",
   setup(__props) {
-    let active = common_vendor.ref(2);
+    let active = common_vendor.ref(1);
+    console.log();
     return (_ctx, _cache) => {
       return common_vendor.e({
-        a: common_vendor.o(($event) => common_vendor.isRef(active) ? active.value = 0 : active = 0),
-        b: common_vendor.o(($event) => common_vendor.isRef(active) ? active.value = 1 : active = 1),
-        c: common_vendor.o(($event) => common_vendor.isRef(active) ? active.value = 2 : active = 2),
-        d: common_vendor.p({
+        a: common_vendor.unref(utils_common.urlTobase64)("icons", "home (1)", "svg"),
+        b: common_vendor.unref(utils_common.urlTobase64)("icons", "home", "svg"),
+        c: common_vendor.o(($event) => common_vendor.isRef(active) ? active.value = 0 : active = 0),
+        d: common_vendor.unref(utils_common.urlTobase64)("icons", "纸飞机_发布 (1)", "svg"),
+        e: common_vendor.unref(utils_common.urlTobase64)("icons", "纸飞机_发布", "svg"),
+        f: common_vendor.o(($event) => common_vendor.isRef(active) ? active.value = 1 : active = 1),
+        g: common_vendor.unref(utils_common.urlTobase64)("icons", "个人 (1)", "svg"),
+        h: common_vendor.unref(utils_common.urlTobase64)("icons", "个人", "svg"),
+        i: common_vendor.o(($event) => common_vendor.isRef(active) ? active.value = 2 : active = 2),
+        j: common_vendor.p({
           active: common_vendor.unref(active)
         }),
-        e: common_vendor.unref(active) == 0
+        k: common_vendor.unref(active) == 0
       }, common_vendor.unref(active) == 0 ? {} : {}, {
-        f: common_vendor.unref(active) == 1
+        l: common_vendor.unref(active) == 1
       }, common_vendor.unref(active) == 1 ? {} : {}, {
-        g: common_vendor.unref(active) == 2
+        m: common_vendor.unref(active) == 2
       }, common_vendor.unref(active) == 2 ? {} : {});
     };
   }

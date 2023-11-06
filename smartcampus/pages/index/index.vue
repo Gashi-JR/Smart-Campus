@@ -1,13 +1,13 @@
 <template>
 	<view class="content">
-		<image class="logo" src="/static/tu 2.png"></image>
+		<image class="logo" :src="urlTobase64('bg','tu 2','png')"></image>
 		<view class="text-area">
 
-			<image class="location" src="/static/icons/定位.svg"></image>
+			<image class="location" :src="urlTobase64('icons','定位','svg')"></image>
 			<text class="title">林桂花江大学</text>
 		</view>
 		<view class="profile">
-			<image src="../../static/logo.png" mode="widthFix"
+			<image :src="urlTobase64('bg','logo','png')" mode="widthFix"
 				style="width: 110rpx;height: 110rpx;border-radius: 50%;margin-right: 30rpx;"></image>
 			<view style="display: flex;flex-direction: column;justify-content: space-between;">
 				<view class="btn">
@@ -17,7 +17,7 @@
 			</view>
 		</view>
 
-		<image class="water" src="/static/图图 水.png"></image>
+		<image class="water" :src="urlTobase64('bg','图图 水','png')"></image>
 		<view class="tab">
 			<view style="height: 45rpx;width: 7rpx;background-color:rgb(83,132,239) ;">
 			</view>
@@ -28,7 +28,7 @@
 			<view class="feature_item">
 				<view class="feature_icon"
 					style="width: 110rpx;height: 110rpx;border-radius: 10rpx;background-color:rgb(57,122,255) ;margin-bottom: 5vh;">
-					<image class="location" src="/static/icons/闪电.svg"></image>
+					<image class="location" :src="urlTobase64('icons','闪电','svg')"></image>
 				</view>
 
 				用电查询
@@ -42,7 +42,7 @@
 				<view class="feature_icon"
 					style="width: 110rpx;height: 110rpx;border-radius: 50%;background-color:rgb(255,139,43) ;margin-bottom: 5vh;">
 
-					<image class="location" src="/static/icons/纸飞机.svg"></image>
+					<image class="location" :src="urlTobase64('icons','纸飞机','svg')"></image>
 				</view>
 				校园取物
 			</view>
@@ -53,7 +53,7 @@
 			<view class="feature_item" @click="toOnlineFix">
 				<view class="feature_icon"
 					style="width: 110rpx;height: 110rpx;border-radius: 10rpx;background-color:rgb(57,122,255) ;margin-bottom: 5vh;">
-					<image class="location" src="/static/icons/无需安装.svg"></image>
+					<image class="location" :src="urlTobase64('icons','无需安装','svg')"></image>
 				</view>
 				网上报修
 			</view>
@@ -64,6 +64,7 @@
 </template>
 
 <script setup>
+		import urlTobase64 from '../../utils/common.js'
 	import {
 		onMounted,
 		ref

@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "校园取物",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "home": "./home",
+    "publish": "./publish",
+    "mine": "./mine"
+  }
+}
