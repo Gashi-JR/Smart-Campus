@@ -11,6 +11,11 @@ if (!Math) {
 const _sfc_main = {
   __name: "home",
   setup(__props) {
+    const toDetail = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/campusposter/posterdetail/posterdetail"
+      });
+    };
     return (_ctx, _cache) => {
       return {
         a: common_vendor.p({
@@ -36,7 +41,8 @@ const _sfc_main = {
           takeAddr: "xxxxxx",
           submitAddr: "xxxxxxxx",
           btnTxt: "取消发布"
-        })
+        }),
+        d: common_vendor.o(toDetail)
       };
     };
   }

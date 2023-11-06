@@ -13,6 +13,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/campusposter/posterdetail/posterdetail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

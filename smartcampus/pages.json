@@ -19,7 +19,16 @@
 				"navigationBarTitleText": "校园取物",
 				"enablePullDownRefresh": true
 			}
+
+		},
+		{
+			"path": "pages/campusposter/posterdetail/posterdetail",
+			"style": {
+				"navigationBarTitleText": "委托详情",
+				"enablePullDownRefresh": false
+			}
 		}
+
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
