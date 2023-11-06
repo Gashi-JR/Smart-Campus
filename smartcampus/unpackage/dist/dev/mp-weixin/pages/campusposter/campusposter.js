@@ -2,9 +2,10 @@
 const common_vendor = require("../../common/vendor.js");
 const utils_common = require("../../utils/common.js");
 if (!Array) {
+  const _component_van_notify = common_vendor.resolveComponent("van-notify");
   const _component_van_tabbar_item = common_vendor.resolveComponent("van-tabbar-item");
   const _component_van_tabbar = common_vendor.resolveComponent("van-tabbar");
-  (_component_van_tabbar_item + _component_van_tabbar)();
+  (_component_van_notify + _component_van_tabbar_item + _component_van_tabbar)();
 }
 if (!Math) {
   (home + publish + mine)();
@@ -33,8 +34,7 @@ const _sfc_main = {
         }),
         k: common_vendor.unref(active) == 0
       }, common_vendor.unref(active) == 0 ? {} : {}, {
-        l: common_vendor.unref(active) == 1
-      }, common_vendor.unref(active) == 1 ? {} : {}, {
+        l: common_vendor.unref(active) == 1,
         m: common_vendor.unref(active) == 2
       }, common_vendor.unref(active) == 2 ? {} : {});
     };
