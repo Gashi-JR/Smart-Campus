@@ -25,7 +25,7 @@
 		</view>
 
 		<view class="feature">
-			<view class="feature_item">
+			<view class="feature_item" @click="toElec">
 				<view class="feature_icon"
 					style="width: 110rpx;height: 110rpx;border-radius: 10rpx;background-color:rgb(57,122,255) ;margin-bottom: 5vh;">
 					<image class="location" :src="urlTobase64('icons','闪电','svg')"></image>
@@ -76,7 +76,11 @@
 	onLoad(() => {
 		console.log(11)
 	})
-
+	const toElec = () => {
+		uni.navigateTo({
+			url: '/pages/electric/electric'
+		});
+	}
 	const toOnlineFix = () => {
 		uni.navigateTo({
 			url: '/pages/onlinefix/onlinefix'

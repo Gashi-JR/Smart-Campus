@@ -27,6 +27,14 @@
 				"navigationBarTitleText": "委托详情",
 				"enablePullDownRefresh": false
 			}
+		},
+		{
+			"path" : "pages/electric/electric",
+			"style" : 
+			{
+				"navigationBarTitleText" : "用电查询",
+				"enablePullDownRefresh" : false
+			}
 		}
 
 	],

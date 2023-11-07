@@ -25,5 +25,5 @@ function _sfc_render(_ctx, _cache) {
     })
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "G:/fronter/STUDY/UNIAPP/smartcampus/smartcampus/pages/onlinefix/onlinefix.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/weixinkaifa/Smart-Campus/smartcampus/pages/onlinefix/onlinefix.vue"]]);
 wx.createPage(MiniProgramPage);

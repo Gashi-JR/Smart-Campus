@@ -12,6 +12,11 @@ const _sfc_main = {
     common_vendor.onLoad(() => {
       console.log(11);
     });
+    const toElec = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/electric/electric"
+      });
+    };
     const toOnlineFix = () => {
       common_vendor.index.navigateTo({
         url: "/pages/onlinefix/onlinefix"
@@ -35,13 +40,14 @@ const _sfc_main = {
         }),
         e: common_vendor.unref(utils_common.urlTobase64)("bg", "图图 水", "png"),
         f: common_vendor.unref(utils_common.urlTobase64)("icons", "闪电", "svg"),
-        g: common_vendor.unref(utils_common.urlTobase64)("icons", "纸飞机", "svg"),
-        h: common_vendor.o(toCampusPoster),
-        i: common_vendor.unref(utils_common.urlTobase64)("icons", "无需安装", "svg"),
-        j: common_vendor.o(toOnlineFix)
+        g: common_vendor.o(toElec),
+        h: common_vendor.unref(utils_common.urlTobase64)("icons", "纸飞机", "svg"),
+        i: common_vendor.o(toCampusPoster),
+        j: common_vendor.unref(utils_common.urlTobase64)("icons", "无需安装", "svg"),
+        k: common_vendor.o(toOnlineFix)
       };
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-1cf27b2a"], ["__file", "G:/fronter/STUDY/UNIAPP/smartcampus/smartcampus/pages/index/index.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-1cf27b2a"], ["__file", "D:/weixinkaifa/Smart-Campus/smartcampus/pages/index/index.vue"]]);
 wx.createPage(MiniProgramPage);

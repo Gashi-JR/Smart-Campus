@@ -59,5 +59,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     f: common_vendor.o((...args) => $options._onClick && $options._onClick(...args))
   };
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "G:/fronter/STUDY/UNIAPP/smartcampus/smartcampus/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/weixinkaifa/Smart-Campus/smartcampus/uni_modules/uni-icons/components/uni-icons/uni-icons.vue"]]);
 wx.createComponent(Component);

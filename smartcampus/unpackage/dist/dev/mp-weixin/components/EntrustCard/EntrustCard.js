@@ -26,5 +26,5 @@ const _sfc_main = {
     };
   }
 };
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-2db31b7e"], ["__file", "G:/fronter/STUDY/UNIAPP/smartcampus/smartcampus/components/EntrustCard/EntrustCard.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-2db31b7e"], ["__file", "D:/weixinkaifa/Smart-Campus/smartcampus/components/EntrustCard/EntrustCard.vue"]]);
 wx.createComponent(Component);

@@ -6,6 +6,7 @@ if (!Math) {
   "./pages/onlinefix/onlinefix.js";
   "./pages/campusposter/campusposter.js";
   "./pages/campusposter/posterdetail/posterdetail.js";
+  "./pages/electric/electric.js";
 }
 const _sfc_main = {
   onLaunch: function() {
@@ -18,7 +19,7 @@ const _sfc_main = {
     console.log("App Hide");
   }
 };
-const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "G:/fronter/STUDY/UNIAPP/smartcampus/smartcampus/App.vue"]]);
+const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/weixinkaifa/Smart-Campus/smartcampus/App.vue"]]);
 function createApp() {
   const app = common_vendor.createSSRApp(App);
   return {
