@@ -9,6 +9,13 @@
             "list": [
                 {
                     "name": "",
+                    "pathName": "pages/electric/electric",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "",
                     "pathName": "pages/campusposter/campusposter",
                     "query": "",
                     "launchMode": "default",
