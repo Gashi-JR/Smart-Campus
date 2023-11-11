@@ -1,42 +1,56 @@
 <template>
-  <div>
-    <div class="container">
+  <view>
+    <view class="container">
       <input v-model="searchVal" type="text" class="search" />
       <button plain class="btn" @click="search">查询</button>
       <button plain class="btn">充值</button>
-    </div>
-    <div><span style="color: rgb(243, 138, 138); font-size: 13px;">提示：请输入需要查询的对应宿舍号</span></div>
+    </view>
+    <view style="padding-left: 27rpx; margin-bottom: 3vh;"><text style="color: rgb(243, 138, 138); font-size: 25rpx;">提示：请输入需要查询的对应宿舍号</text></view>
+
 
     
-  </div>
+  </view>
   
-  <div class="table-container">
-      <div class="table-header">
-        <div class="table-cell">
+  <view class="table-container">
+      <view class="table-header">
+        <view class="table-cell">
           <strong>日期</strong>
-        </div>
-        <div class="table-cell">
+        </view>
+        <view class="table-cell">
           <strong>电量记录</strong>
-        </div>
-        <div class="table-cell">
+        </view>
+        <view class="table-cell">
           <strong>电费余额</strong>
-        </div>
-      </div>
-      <div v-for="(item, index) in tableData" :key="index" class="table-row">
-        <div class="table-cell">
+        </view>
+      </view>
+      <view v-for="(item, index) in tableData" :key="index" class="table-row">
+        <view class="table-cell">
           {{ item.date }}
-        </div>
-        <div class="table-cell">
+        </view>
+        <view class="table-cell">
           {{ item.electricityRecord }}
-        </div>
-        <div class="table-cell">
+        </view>
+        <view class="table-cell">
           {{ item.remainingBalance }}
-        </div>
-      </div>
-    </div>
+        </view>
+      </view>
+    </view>
+	
+	
+	
+	
+	 <view>
+	    <uni-card :is-full="true" :is-shadow="false">
+	    </uni-card>
+	    <uni-section title="默认样式" type="line" padding>
+	      <uni-pagination :total="50" title="标题文字" />
+	    </uni-section>
+	  </view>
 </template>
 
 <script setup>
+import { onMounted, ref } from 'vue';
+import uniPagination from '../../uni_modules/uni-pagination/components/uni-pagination/uni-pagination.vue'
 const tableData = [
   { date: '2023-11-01', electricityRecord: '100 kWh', remainingBalance: '$50' },
   { date: '2023-11-02', electricityRecord: '95 kWh', remainingBalance: '$45' },
@@ -45,10 +59,26 @@ const tableData = [
   { date: '2023-11-05', electricityRecord: '102 kWh', remainingBalance: '$52' },
   { date: '2023-11-06', electricityRecord: '105 kWh', remainingBalance: '$54' },
   { date: '2023-11-07', electricityRecord: '97 kWh', remainingBalance: '$47' },
-  { date: '2023-11-08', electricityRecord: '101 kWh', remainingBalance: '$51' },
-  { date: '2023-11-09', electricityRecord: '106 kWh', remainingBalance: '$56' },
+  { date: '2023-11-07', electricityRecord: '97 kWh', remainingBalance: '$47' },
   { date: '2023-11-10', electricityRecord: '99 kWh', remainingBalance: '$49' }
 ];
+
+
+
+
+ 
+     let  current=ref(3)
+	 let  total=ref(10)
+	 let  pageSize=ref(10)
+
+
+  onMounted(()=>{
+	  setTimeout(() => {
+	   current.value = 5
+	  }, 3000)
+  })
+  
+
 </script>
 
 <style lang="scss">
@@ -59,6 +89,7 @@ const tableData = [
   border-radius: 20rpx; /* 设置圆角 */
   margin: 10rpx; /* 设置周围边距 */
   box-shadow: 0 5rpx 20rpx 0 rgba(0, 0, 0, 0.186);
+  margin-bottom: 0.2vh;
 }
 .btn {
   width: 119rpx;
@@ -67,10 +98,14 @@ const tableData = [
   font-size: 27rpx;
   border-radius: 20rpx;
   border: 5rpx solid rgb(186, 186, 186) !important;
+  
 }
 .container {
   display: flex;
   align-items: center; /* 垂直居中对齐 */
+  margin-top: 32rpx;
+  padding-left: 10rpx;
+    padding-right: 10rpx;
 }
 .search {
   margin-right: 10rpx; /* 设置右边距以增加输入框和按钮之间的间距 */
@@ -87,25 +122,64 @@ const tableData = [
 .table-container {
   display: flex;
   flex-direction: column;
-  margin: 10px; /* 添加外边距 */
+  margin: 20rpx; /* 添加外边距 */
 }
 
 .table-header {
   display: flex;
-  border: 1px solid #ccc;
-  font-size: 14px;
+  // border: 2rpx solid #ccc;
+  font-size: 28rpx;
   background-color: rgb(225, 223, 223); /* 设置背景颜色 */
 }
 
 .table-row {
   display: flex;
-  border-left: 1px solid #ccc; /* 左边框线 */
-  border-right: 1px solid #ccc; /* 右边框线 */
+  border-left: 2rpx solid #ccc; /* 左边框线 */
+  border-right: 2rpx solid #ccc; /* 右边框线 */
 }
 
 .table-cell {
-  padding: 8px;
+  padding: 16rpx;
+  height: 2vh;
   text-align: center;
+  line-height: 2vh;
   flex: 1;
+  font-size: 27rpx;
+  border: 1rpx solid rgba(216, 216, 216,0.4);
+}
+
+
+
+
+.example-body {
+  display: block;
+  
+}
+
+.btn-view {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx;
+  text-align: center;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.btn-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.button {
+  margin: 40rpx;
+  width: 300rpx;
+  font-size: 28rpx;
+  color: #333;
+  
 }
 </style>

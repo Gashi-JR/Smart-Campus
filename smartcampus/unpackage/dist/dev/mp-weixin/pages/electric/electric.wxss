@@ -32,6 +32,7 @@
   margin: 10rpx;
   /* 设置周围边距 */
   box-shadow: 0 5rpx 20rpx 0 rgba(0, 0, 0, 0.186);
+  margin-bottom: 0.2vh;
 }
 .btn {
   width: 119rpx;
@@ -45,6 +46,9 @@
   display: flex;
   align-items: center;
   /* 垂直居中对齐 */
+  margin-top: 32rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
 }
 .search {
   margin-right: 10rpx;
@@ -61,25 +65,52 @@
 .table-container {
   display: flex;
   flex-direction: column;
-  margin: 10px;
+  margin: 20rpx;
   /* 添加外边距 */
 }
 .table-header {
   display: flex;
-  border: 1px solid #ccc;
-  font-size: 14px;
+  font-size: 28rpx;
   background-color: #e1dfdf;
   /* 设置背景颜色 */
 }
 .table-row {
   display: flex;
-  border-left: 1px solid #ccc;
+  border-left: 2rpx solid #ccc;
   /* 左边框线 */
-  border-right: 1px solid #ccc;
+  border-right: 2rpx solid #ccc;
   /* 右边框线 */
 }
 .table-cell {
-  padding: 8px;
+  padding: 16rpx;
+  height: 2vh;
   text-align: center;
+  line-height: 2vh;
   flex: 1;
+  font-size: 27rpx;
+  border: 1rpx solid rgba(216, 216, 216, 0.4);
+}
+.example-body {
+  display: block;
+}
+.btn-view {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx;
+  text-align: center;
+  background-color: #fff;
+  justify-content: center;
+  align-items: center;
+}
+.btn-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.button {
+  margin: 40rpx;
+  width: 300rpx;
+  font-size: 28rpx;
+  color: #333;
 }

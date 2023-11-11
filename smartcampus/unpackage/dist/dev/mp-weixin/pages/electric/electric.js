@@ -1,5 +1,14 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+if (!Array) {
+  const _component_uni_card = common_vendor.resolveComponent("uni-card");
+  const _component_uni_section = common_vendor.resolveComponent("uni-section");
+  (_component_uni_card + _component_uni_section)();
+}
+if (!Math) {
+  uniPagination();
+}
+const uniPagination = () => "../../uni_modules/uni-pagination/components/uni-pagination/uni-pagination.js";
 const _sfc_main = {
   __name: "electric",
   setup(__props) {
@@ -11,10 +20,17 @@ const _sfc_main = {
       { date: "2023-11-05", electricityRecord: "102 kWh", remainingBalance: "$52" },
       { date: "2023-11-06", electricityRecord: "105 kWh", remainingBalance: "$54" },
       { date: "2023-11-07", electricityRecord: "97 kWh", remainingBalance: "$47" },
-      { date: "2023-11-08", electricityRecord: "101 kWh", remainingBalance: "$51" },
-      { date: "2023-11-09", electricityRecord: "106 kWh", remainingBalance: "$56" },
+      { date: "2023-11-07", electricityRecord: "97 kWh", remainingBalance: "$47" },
       { date: "2023-11-10", electricityRecord: "99 kWh", remainingBalance: "$49" }
     ];
+    let current = common_vendor.ref(3);
+    common_vendor.ref(10);
+    common_vendor.ref(10);
+    common_vendor.onMounted(() => {
+      setTimeout(() => {
+        current.value = 5;
+      }, 3e3);
+    });
     return (_ctx, _cache) => {
       return {
         a: _ctx.searchVal,
@@ -27,6 +43,19 @@ const _sfc_main = {
             c: common_vendor.t(item.remainingBalance),
             d: index
           };
+        }),
+        e: common_vendor.p({
+          ["is-full"]: true,
+          ["is-shadow"]: false
+        }),
+        f: common_vendor.p({
+          total: 50,
+          title: "标题文字"
+        }),
+        g: common_vendor.p({
+          title: "默认样式",
+          type: "line",
+          padding: true
         })
       };
     };
