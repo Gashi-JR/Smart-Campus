@@ -26,7 +26,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.login {
 		display: block;
 		margin: 0;

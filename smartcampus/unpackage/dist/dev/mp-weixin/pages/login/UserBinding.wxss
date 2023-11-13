@@ -23,10 +23,10 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.container {
+.container.data-v-1df429a4 {
   padding: 25rpx;
 }
-.info-container {
+.info-container.data-v-1df429a4 {
   margin-top: 12vh;
   height: 30vh;
   border-radius: 50rpx;
@@ -39,12 +39,12 @@
   flex-direction: column;
   justify-content: space-around;
 }
-.input-item {
+.input-item.data-v-1df429a4 {
   display: flex;
   width: 100%;
   align-items: center;
 }
-.input-item .name {
+.input-item .name.data-v-1df429a4 {
   border: 4rpx solid #c3c3c3;
   border-radius: 24rpx;
   height: 6vh;
@@ -54,11 +54,11 @@
   padding-right: 20rpx;
   font-size: 28rpx;
 }
-.input-item .label-text {
+.input-item .label-text.data-v-1df429a4 {
   margin-right: 10rpx;
   font-size: 50rpx;
 }
-.bind-btn {
+.bind-btn.data-v-1df429a4 {
   width: 350rpx;
   height: 6.5vh;
   background-color: #0277be;
@@ -66,6 +66,6 @@
   line-height: 6.5vh;
   margin-top: 21vh;
 }
-.focus {
+.focus.data-v-1df429a4 {
   border-color: #0082d3 !important;
 }

@@ -43,7 +43,7 @@
 	import urlToBase64 from '../../utils/common.js';
 </script>
 
-<style>
+<style lang="scss">
 	.text-container {
 	
 		display: flex;

@@ -32,5 +32,5 @@ const _sfc_main = {
     };
   }
 };
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "G:/fronter/STUDY/UNIAPP/smartcampus/smartcampus/pages/login/UserBinding.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-1df429a4"], ["__file", "G:/fronter/STUDY/UNIAPP/smartcampus/smartcampus/pages/login/UserBinding.vue"]]);
 wx.createPage(MiniProgramPage);

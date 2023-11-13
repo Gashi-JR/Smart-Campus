@@ -23,7 +23,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.login {
+.login.data-v-e4e4508d {
   display: block;
   margin: 0;
   height: 6vh;
@@ -32,13 +32,13 @@
   line-height: 6vh;
   background-color: #0277be;
 }
-.btn {
+.btn.data-v-e4e4508d {
   margin-top: 15vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.img {
+.img.data-v-e4e4508d {
   border: 4rpx solid #d6d6d6;
   border-radius: 50rpx;
   margin-left: 20rpx;
@@ -50,6 +50,6 @@
   width: 710rpx;
   height: 50vh;
 }
-.img .logo {
+.img .logo.data-v-e4e4508d {
   width: 100%;
 }
