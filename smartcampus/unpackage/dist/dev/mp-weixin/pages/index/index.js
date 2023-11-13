@@ -12,6 +12,11 @@ const _sfc_main = {
     common_vendor.onLoad(() => {
       console.log(11);
     });
+    const toElec = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/electric/electric"
+      });
+    };
     const toOnlineFix = () => {
       common_vendor.index.navigateTo({
         url: "/pages/onlinefix/onlinefix"
@@ -41,10 +46,11 @@ const _sfc_main = {
         }),
         f: common_vendor.unref(utils_common.urlTobase64)("bg", "图图 水", "png"),
         g: common_vendor.unref(utils_common.urlTobase64)("icons", "闪电", "svg"),
-        h: common_vendor.unref(utils_common.urlTobase64)("icons", "纸飞机", "svg"),
-        i: common_vendor.o(toCampusPoster),
-        j: common_vendor.unref(utils_common.urlTobase64)("icons", "无需安装", "svg"),
-        k: common_vendor.o(toOnlineFix)
+        h: common_vendor.o(toElec),
+        i: common_vendor.unref(utils_common.urlTobase64)("icons", "纸飞机", "svg"),
+        j: common_vendor.o(toCampusPoster),
+        k: common_vendor.unref(utils_common.urlTobase64)("icons", "无需安装", "svg"),
+        l: common_vendor.o(toOnlineFix)
       };
     };
   }

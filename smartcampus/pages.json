@@ -40,6 +40,22 @@
 			"style": {
 				"navigationBarTitleText": "绑定、班级学号"
 			}
+		},
+		{
+			"path" : "pages/electric/electric",
+			"style" : 
+			{
+				"navigationBarTitleText" : "用电查询",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/electric/recharge/recharge",
+			"style" : 
+			{
+				"navigationBarTitleText" : "充值",
+				"enablePullDownRefresh" : false
+			}
 		}
 	],
 

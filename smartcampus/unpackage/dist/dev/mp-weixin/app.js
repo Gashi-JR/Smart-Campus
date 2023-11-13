@@ -8,6 +8,8 @@ if (!Math) {
   "./pages/campusposter/posterdetail/posterdetail.js";
   "./pages/login/login.js";
   "./pages/login/UserBinding.js";
+  "./pages/electric/electric.js";
+  "./pages/electric/recharge/recharge.js";
 }
 const _sfc_main = {
   onLaunch: function() {

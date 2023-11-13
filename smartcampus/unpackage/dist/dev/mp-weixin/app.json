@@ -5,7 +5,9 @@
     "pages/campusposter/campusposter",
     "pages/campusposter/posterdetail/posterdetail",
     "pages/login/login",
-    "pages/login/UserBinding"
+    "pages/login/UserBinding",
+    "pages/electric/electric",
+    "pages/electric/recharge/recharge"
   ],
   "usingComponents": {
     "van-action-sheet": "/wxcomponents/vant-weapp/dist/action-sheet/index",
