@@ -1,0 +1,1 @@
+<view class="container"><view class="img"><image class="logo" src="{{a}}"></image></view><view class="btn"><button class="login" bindtap="{{b}}">微信登录</button></view></view>

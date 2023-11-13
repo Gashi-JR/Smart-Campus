@@ -2,7 +2,6 @@
 	<view class="content">
 		<image class="logo" :src="urlTobase64('bg','tu 2','png')"></image>
 		<view class="text-area">
-
 			<image class="location" :src="urlTobase64('icons','定位','svg')"></image>
 			<text class="title">林桂花江大学</text>
 		</view>
@@ -11,7 +10,7 @@
 				style="width: 110rpx;height: 110rpx;border-radius: 50%;margin-right: 30rpx;"></image>
 			<view style="display: flex;flex-direction: column;justify-content: space-between;">
 				<view class="btn">
-					<van-button color="rgb(84,165,255)" round size="small" block>立即登录</van-button>
+					<van-button color="rgb(84,165,255)" round size="small" block @click="toLogin">立即登录</van-button>
 				</view>
 				<text style="color: white;font-size: 25rpx;">登录查看更多内容</text>
 			</view>
@@ -86,6 +85,11 @@
 	const toCampusPoster= () => {
 		uni.navigateTo({
 			url: '/pages/campusposter/campusposter'
+		});
+	}
+	const toLogin= () => {
+		uni.navigateTo({
+			url: '/pages/login/login'
 		});
 	}
 

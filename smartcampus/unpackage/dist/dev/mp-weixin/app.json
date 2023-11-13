@@ -3,7 +3,9 @@
     "pages/index/index",
     "pages/onlinefix/onlinefix",
     "pages/campusposter/campusposter",
-    "pages/campusposter/posterdetail/posterdetail"
+    "pages/campusposter/posterdetail/posterdetail",
+    "pages/login/login",
+    "pages/login/UserBinding"
   ],
   "usingComponents": {
     "van-action-sheet": "/wxcomponents/vant-weapp/dist/action-sheet/index",

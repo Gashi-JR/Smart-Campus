@@ -6,6 +6,8 @@ if (!Math) {
   "./pages/onlinefix/onlinefix.js";
   "./pages/campusposter/campusposter.js";
   "./pages/campusposter/posterdetail/posterdetail.js";
+  "./pages/login/login.js";
+  "./pages/login/UserBinding.js";
 }
 const _sfc_main = {
   onLaunch: function() {

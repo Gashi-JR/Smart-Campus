@@ -7,6 +7,7 @@
 			}
 		},
 		{
+
 			"path": "pages/onlinefix/onlinefix",
 			"style": {
 				"navigationBarTitleText": "网上报修",
@@ -26,10 +27,23 @@
 			"style": {
 				"navigationBarTitleText": "委托详情",
 				"enablePullDownRefresh": false
+				}
+		},
+	{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "用户登录"
+			}
+		},
+		{
+			"path": "pages/login/UserBinding",
+			"style": {
+				"navigationBarTitleText": "绑定、班级学号"
 			}
 		}
-
 	],
+
+
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
@@ -87,3 +101,4 @@
 	},
 	"uniIdRouter": {}
 }
+
