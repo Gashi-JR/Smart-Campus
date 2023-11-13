@@ -7,6 +7,7 @@ if (!Math) {
   "./pages/campusposter/campusposter.js";
   "./pages/campusposter/posterdetail/posterdetail.js";
   "./pages/electric/electric.js";
+  "./pages/electric/recharge/recharge.js";
 }
 const _sfc_main = {
   onLaunch: function() {

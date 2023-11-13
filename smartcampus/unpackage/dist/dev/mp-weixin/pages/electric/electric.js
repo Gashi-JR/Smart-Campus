@@ -31,12 +31,18 @@ const _sfc_main = {
         current.value = 5;
       }, 3e3);
     });
+    const toRecharge = () => {
+      common_vendor.index.navigateTo({
+        url: "/pages/electric/recharge/recharge"
+      });
+    };
     return (_ctx, _cache) => {
       return {
         a: _ctx.searchVal,
         b: common_vendor.o(($event) => _ctx.searchVal = $event.detail.value),
         c: common_vendor.o((...args) => _ctx.search && _ctx.search(...args)),
-        d: common_vendor.f(tableData, (item, index, i0) => {
+        d: common_vendor.o(toRecharge),
+        e: common_vendor.f(tableData, (item, index, i0) => {
           return {
             a: common_vendor.t(item.date),
             b: common_vendor.t(item.electricityRecord),
@@ -44,15 +50,15 @@ const _sfc_main = {
             d: index
           };
         }),
-        e: common_vendor.p({
+        f: common_vendor.p({
           ["is-full"]: true,
           ["is-shadow"]: false
         }),
-        f: common_vendor.p({
+        g: common_vendor.p({
           total: 50,
           title: "标题文字"
         }),
-        g: common_vendor.p({
+        h: common_vendor.p({
           title: "默认样式",
           type: "line",
           padding: true

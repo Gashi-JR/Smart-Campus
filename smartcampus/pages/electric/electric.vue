@@ -3,7 +3,7 @@
     <view class="container">
       <input v-model="searchVal" type="text" class="search" />
       <button plain class="btn" @click="search">查询</button>
-      <button plain class="btn">充值</button>
+      <button plain class="btn" @click="toRecharge">充值</button>
     </view>
     <view style="padding-left: 27rpx; margin-bottom: 3vh;"><text style="color: rgb(243, 138, 138); font-size: 25rpx;">提示：请输入需要查询的对应宿舍号</text></view>
 
@@ -78,7 +78,11 @@ const tableData = [
 	  }, 3000)
   })
   
-
+const toRecharge = ()=>{
+	uni.navigateTo({
+		url:'/pages/electric/recharge/recharge'
+	})
+}
 </script>
 
 <style lang="scss">
