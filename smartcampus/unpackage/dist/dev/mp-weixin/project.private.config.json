@@ -9,6 +9,27 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/electric/electric",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/onlinefix/myfixdetail/myfixdetail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "pages/electric/recharge/recharge",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

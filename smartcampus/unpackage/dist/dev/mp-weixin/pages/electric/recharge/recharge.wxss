@@ -23,13 +23,10 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.table-header {
-  display: flex;
-  font-size: 40rpx;
-  background-color: #e1dfdf;
-  /* 设置背景颜色 */
+radio.data-v-8607525f {
+  transform: scale(0.6);
 }
-.table-cell {
+.table-cell.data-v-8607525f {
   padding: 16rpx;
   height: 4vh;
   text-align: left;
@@ -39,59 +36,53 @@
   border: 1rpx solid #ababab;
   margin-left: 20rpx;
   margin-right: 20rpx;
+  display: flex;
+  align-items: center;
 }
-.howmuch .uni-radio .uni-radio-input {
-  height: 20rpx;
-  /* 调整选择圈的高度 */
-  width: 20rpx;
-  /* 调整选择圈的宽度 */
-}
-.uni-column text {
+.uni-column text.data-v-8607525f {
   color: #69bcfc;
   /* 设置字体颜色为红色 */
   margin-right: 40rpx;
 }
-.uni-form-item .title {
+.uni-form-item .title.data-v-8607525f {
   padding: 20rpx 0;
 }
-.zhifu {
+.zhifu.data-v-8607525f {
   padding: 30rpx;
-  /* 添加内边距 */
-  border-bottom: 2rpx solid #ccc;
-  /* 添加下方分隔线 */
+  border-bottom: 2rpx solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.radio {
-  float: right;
-  /* 让按钮靠右 */
-  font-size: 5rpx;
-  /* 设置按钮的字体大小为12像素，实现按钮变小 */
-  margin-right: 3rpx;
-  /* 添加右侧间距 */
-}
-.checkout {
+.checkout.data-v-8607525f {
   display: flex;
   justify-content: flex-end;
+  align-items: center;
   position: fixed;
-  bottom: 0;
+  bottom: 3vh;
   left: 0;
   width: 100%;
-  border-top: 1rpx solid #ededed;
+  border-top: 2rpx solid #ededed;
   padding-top: 20rpx;
-  /* 为内部内容顶部添加 10 像素的内边距 */
   padding-bottom: 10rpx;
 }
-.checkout .checkout1 {
-  color: #f77a96;
-  margin-right: 20rpx;
+.checkout .checkout1.data-v-8607525f {
+  color: #f52e2e;
+  font-size: 40rpx;
 }
-.checkout .checkout2 {
-  margin-right: 20rpx;
+.checkout .checkout2.data-v-8607525f {
+  margin-right: 40rpx;
+  font-size: 24rpx;
 }
-.checkout .btn1 {
+.checkout .btn1.data-v-8607525f {
   margin: 0;
-  color: #fde5e5;
-  border-radius: 10rpx;
+  color: white;
+  border-radius: 15rpx;
+  border: 2rpx solid #827373;
   background-color: #f52e2e;
-  font-size: 21rpx;
+  font-size: 24rpx;
   margin-right: 20rpx;
+  height: 4.5vh;
+  width: 170rpx;
+  line-height: 4.2vh;
 }

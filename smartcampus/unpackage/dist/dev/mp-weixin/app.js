@@ -10,6 +10,7 @@ if (!Math) {
   "./pages/login/UserBinding.js";
   "./pages/electric/electric.js";
   "./pages/electric/recharge/recharge.js";
+  "./pages/onlinefix/myfixdetail/myfixdetail.js";
 }
 const _sfc_main = {
   onLaunch: function() {

@@ -56,6 +56,14 @@
 				"navigationBarTitleText" : "充值",
 				"enablePullDownRefresh" : false
 			}
+		},
+		{
+			"path" : "pages/onlinefix/myfixdetail/myfixdetail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "我的报修单详情",
+				"enablePullDownRefresh" : false
+			}
 		}
 	],
 

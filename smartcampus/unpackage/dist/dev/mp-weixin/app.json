@@ -7,7 +7,8 @@
     "pages/login/login",
     "pages/login/UserBinding",
     "pages/electric/electric",
-    "pages/electric/recharge/recharge"
+    "pages/electric/recharge/recharge",
+    "pages/onlinefix/myfixdetail/myfixdetail"
   ],
   "usingComponents": {
     "van-action-sheet": "/wxcomponents/vant-weapp/dist/action-sheet/index",

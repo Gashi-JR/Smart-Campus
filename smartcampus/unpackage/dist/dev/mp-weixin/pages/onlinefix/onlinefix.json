@@ -3,6 +3,7 @@
   "enablePullDownRefresh": false,
   "usingComponents": {
     "fix-notice": "./fixNotice",
-    "fix-apply": "./fixApply"
+    "fix-apply": "./fixApply",
+    "my-fix": "./myFix"
   }
 }
