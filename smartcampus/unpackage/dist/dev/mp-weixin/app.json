@@ -1,6 +1,14 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/onlinefix/onlinefix",
+    "pages/campusposter/campusposter",
+    "pages/campusposter/posterdetail/posterdetail",
+    "pages/login/login",
+    "pages/login/UserBinding",
+    "pages/electric/electric",
+    "pages/electric/recharge/recharge",
+    "pages/onlinefix/myfixdetail/myfixdetail"
   ],
   "usingComponents": {
     "van-action-sheet": "/wxcomponents/vant-weapp/dist/action-sheet/index",
@@ -47,7 +55,8 @@
     "van-rate": "/wxcomponents/vant-weapp/dist/rate/index",
     "van-collapse": "/wxcomponents/vant-weapp/dist/collapse/index",
     "van-collapse-item": "/wxcomponents/vant-weapp/dist/collapse-item/index",
-    "van-picker": "/wxcomponents/vant-weapp/dist/picker/index"
+    "van-picker": "/wxcomponents/vant-weapp/dist/picker/index",
+    "van-uploader": "/wxcomponents/vant-weapp/dist/uploader/index"
   },
   "window": {
     "navigationBarTextStyle": "black",

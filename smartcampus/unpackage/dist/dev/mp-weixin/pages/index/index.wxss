@@ -23,19 +23,19 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.content {
+.content.data-v-1cf27b2a {
   position: relative;
-  height: 1220rpx;
+  height: 100vh;
 }
-.content .logo {
+.content .logo.data-v-1cf27b2a {
   position: absolute;
   width: 100%;
-  height: 350rpx;
+  height: 29%;
   border-bottom-left-radius: 55rpx;
   border-bottom-right-radius: 55rpx;
   z-index: -1;
 }
-.content .text-area {
+.content .text-area.data-v-1cf27b2a {
   position: absolute;
   /*绝对布局*/
   z-index: 1;
@@ -46,47 +46,59 @@
   align-items: center;
   top: 15rpx;
 }
-.content .location {
+.content .location.data-v-1cf27b2a {
   width: 50rpx;
   height: 50rpx;
 }
-.content .title {
+.content .title.data-v-1cf27b2a {
   font-size: 30rpx;
   color: white;
   margin-left: 30rpx;
 }
-.content .profile {
+.content .profile.data-v-1cf27b2a {
   position: absolute;
-  top: 100rpx;
+  top: 7%;
   display: flex;
   padding-left: 50rpx;
 }
-.content .btn {
+.content .btn.data-v-1cf27b2a {
   width: 170rpx;
 }
-.content .water {
+.content .water.data-v-1cf27b2a {
   position: absolute;
   border-radius: 40rpx;
-  height: 300rpx;
+  height: 25%;
   width: 550rpx;
-  top: 270rpx;
+  top: 22%;
   box-shadow: 0 10rpx 0 0 #8db1fc;
   left: 100rpx;
 }
-.content .tab {
+.content .tab.data-v-1cf27b2a {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 680rpx;
+  top: 57%;
   left: 50rpx;
 }
-.content .feature {
+.content .feature.data-v-1cf27b2a {
   position: absolute;
   left: 10%;
-  bottom: 0;
+  top: 70%;
   display: flex;
   width: 80%;
   justify-content: space-around;
+  align-items: flex-start;
+}
+.content .feature .feature_item.data-v-1cf27b2a {
+  font-size: 25rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.content .feature .feature_item .feature_icon.data-v-1cf27b2a {
+  display: flex;
+  justify-content: center;
   align-items: center;
 }

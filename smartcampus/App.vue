@@ -14,6 +14,8 @@
 
 <style>
 	/*每个页面公共css */
-	@import '/wxcomponents/vant-weapp/dist/common/index.wxss'
-
+	@import '/wxcomponents/vant-weapp/dist/common/index.wxss';
+	.van-tab--active {
+		color: rgb(0, 157, 255) !important;
+	}
 </style>

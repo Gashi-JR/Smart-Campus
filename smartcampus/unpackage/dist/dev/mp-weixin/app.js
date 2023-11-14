@@ -3,6 +3,14 @@ Object.defineProperty(exports, Symbol.toStringTag, { value: "Module" });
 const common_vendor = require("./common/vendor.js");
 if (!Math) {
   "./pages/index/index.js";
+  "./pages/onlinefix/onlinefix.js";
+  "./pages/campusposter/campusposter.js";
+  "./pages/campusposter/posterdetail/posterdetail.js";
+  "./pages/login/login.js";
+  "./pages/login/UserBinding.js";
+  "./pages/electric/electric.js";
+  "./pages/electric/recharge/recharge.js";
+  "./pages/onlinefix/myfixdetail/myfixdetail.js";
 }
 const _sfc_main = {
   onLaunch: function() {

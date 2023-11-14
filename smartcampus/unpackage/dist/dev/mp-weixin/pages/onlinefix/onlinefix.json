@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "网上报修",
+  "enablePullDownRefresh": false,
+  "usingComponents": {
+    "fix-notice": "./fixNotice",
+    "fix-apply": "./fixApply",
+    "my-fix": "./myFix"
+  }
+}
