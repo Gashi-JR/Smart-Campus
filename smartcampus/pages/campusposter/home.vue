@@ -1,14 +1,10 @@
 <template>
 	<view class="content">
-		<EntrustCard title="委托人" :showBtn="true" content="快递为XXX，大小大概为XXXXX" takeAddr="xxxxxx" submitAddr="xxxxxxxx"
-			style="margin-top: 1vh;margin-bottom: 2vh;" btnTxt="取消发布">
-		</EntrustCard>
-		<EntrustCard title="委托人" :showBtn="false" content="快递为XXX，大小大概为XXXXX" takeAddr="xxxxxx" submitAddr="xxxxxxxx"
-			style="margin-top: 1vh;margin-bottom: 2vh;" btnTxt="取消接单">
-		</EntrustCard>
-		<view class="" @click="toDetail">
-			<EntrustCard title="委托人" :showBtn="false" content="快递为XXX，大小大概为XXXXX" takeAddr="xxxxxx" submitAddr="xxxxxxxx"
-				style="margin-top: 1vh;margin-bottom: 2vh;" btnTxt="取消发布">
+
+		<view @click="toDetail(item.id)" v-for="(item,index) in data" :key="index"
+			style="margin-top: 1vh;margin-bottom: 2vh;">
+			<EntrustCard title="委托人" :showBtn="false" :content="item.thingDesc" :takeAddr="item.pickAddress"
+				:submitAddr="item.deliveryAddress">
 			</EntrustCard>
 		</view>
 
@@ -16,13 +12,40 @@
 </template>
 
 <script setup>
+	import {
+		onMounted,
+		ref
+	} from 'vue';
 	import entrustcard from '/components/EntrustCard/EntrustCard.vue'
-	const toDetail = () => {
+	import http from '@/utils/http.js'
+	import {
+		onLoad
+	} from "@dcloudio/uni-app"
+	let data = ref()
+
+	const toDetail = (id) => {
+		console.log(id);
 		uni.navigateTo({
 			url: '/pages/campusposter/posterdetail/posterdetail'
 		});
 
 	}
+
+	const getData = async () => {
+		let res = await http("/deliverOrder/acceptFind/1", "GET", {}, false)
+		data.value = res.data
+		console.log(res.data);
+	}
+	onLoad(async () => {
+		console.log(222);
+		let res = await http("/deliverOrder/acceptFind/1", "GET", {}, false)
+		data.value = res.data
+		console.log(res.data);
+	})
+
+	onPullDownRefresh(() => {
+		getData()
+	})
 </script>
 
 <style lang="scss" scoped>

@@ -42,7 +42,7 @@
 	import publish from './publish.vue'
 	import mine from './mine.vue'
 	import urlTobase64 from '../../utils/common.js'
-	let active = ref(1)
+	let active = ref(0)
 	console.log();
 </script>
 

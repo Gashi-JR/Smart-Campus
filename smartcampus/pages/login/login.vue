@@ -7,8 +7,11 @@
 		<view class="btn">
 			<button class="login" @click="toBinding">微信登录</button>
 		</view>
-
-
+		<uni-popup ref="alertDialog" type="dialog">
+			<uni-popup-dialog type="error" cancelText="取消" confirmText="确定" title="微信登录授权提示" content="是否允许授权？"
+				@confirm="dialogConfirm" @close="dialogClose" :before-close="true"></uni-popup-dialog>
+		</uni-popup>
+		<van-toast id="van-toast" />
 	</view>
 </template>
 
@@ -17,12 +20,40 @@
 		ref
 	} from 'vue';
 	let value = ref("")
+	let alertDialog = ref()
 	import urlTobase64 from '../../utils/common.js'
+	import http from '@/utils/http.js'
+	import Toast from '@/wxcomponents/vant-weapp/dist/toast/toast.js'
 
 	const toBinding = () => {
-		uni.navigateTo({
-			url: '/pages/login/UserBinding'
-		})
+
+		alertDialog.value.open()
+
+	}
+
+	const dialogConfirm = () => {
+		uni.login({
+			provider: 'weixin',
+			success: async (loginRes) => {
+				console.log(loginRes.code);
+				let res = await http(`/user/login?code=${loginRes.code}`, "GET").catch((err) => {
+					Toast.fail('登录失败，请检查网络');
+				})
+
+				if (res.code && res.code === true) {
+					uni.setStorageSync('openId', res.data.openId);
+					uni.setStorageSync('sessionKey', res.data.sessionKey);
+					alertDialog.value.close()
+					uni.navigateTo({
+						url: '/pages/login/getUserInfo/getUserInfo'
+					})
+				}
+			}
+		});
+
+	}
+	const dialogClose = () => {
+		alertDialog.value.close()
 	}
 </script>
 
@@ -34,7 +65,7 @@
 		width: 300rpx;
 		font-size: 28rpx;
 		line-height: 6vh;
-		background-color: rgb(2,119,190);
+		background-color: rgb(2, 119, 190);
 	}
 
 	.btn {
@@ -55,7 +86,8 @@
 		align-items: center;
 		width: 710rpx;
 		height: 50vh;
-		.logo{
+
+		.logo {
 			width: 100%;
 		}
 	}

@@ -11,6 +11,7 @@ if (!Math) {
   "./pages/electric/electric.js";
   "./pages/electric/recharge/recharge.js";
   "./pages/onlinefix/myfixdetail/myfixdetail.js";
+  "./pages/login/getUserInfo/getUserInfo.js";
 }
 const _sfc_main = {
   onLaunch: function() {

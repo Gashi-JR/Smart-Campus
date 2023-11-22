@@ -9,23 +9,23 @@
 			</view>
 			<view class="table-row">
 				<view class="table-cell">
-					缴费金额：25
+					缴费金额：{{sum}}
 				</view>
 				<view class="table-cell">
 					<view class="uni-form-item uni-column">
 
-						<radio-group name="yuan1" class="howmuch">
+						<radio-group name="yuan" class="howmuch" @change="onChange">
 							<label>
-								<radio value="yuan" class="money" /><text>10元</text>
+								<radio :value="10" class="money" /><text>10元</text>
 							</label>
 							<label>
-								<radio value="yuan" class="money" /><text>20元</text>
+								<radio :value="20" class="money" /><text>20元</text>
 							</label>
 							<label>
-								<radio value="yuan" class="money" /><text>50元</text>
+								<radio :value="50" class="money" /><text>50元</text>
 							</label>
 							<label>
-								<radio value="yuan" class="money" /><text>100元</text>
+								<radio :value="100" class="money" /><text>100元</text>
 							</label>
 						</radio-group>
 					</view>
@@ -65,6 +65,13 @@
 
 <script setup>
 	import urlToBase64 from '@/utils/common.js'
+	import {
+		ref
+	} from 'vue';
+	let sum = ref(0)
+	const onChange = (e) => {
+		sum.value = e.target.value
+	}
 </script>
 
 <style lang="scss" scoped>

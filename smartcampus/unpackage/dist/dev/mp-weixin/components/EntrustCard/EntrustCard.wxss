@@ -26,13 +26,14 @@
 .card.data-v-2db31b7e {
   border: 2rpx solid #bcbcbc;
   border-radius: 10rpx;
-  padding-left: 40rpx;
-  padding-right: 40rpx;
+  padding-left: 45rpx;
+  padding-right: 45rpx;
   display: flex;
   flex-direction: column;
   height: 22vh;
   width: 600rpx;
   margin: 0 auto;
+  justify-content: center;
 }
 .card .btn.data-v-2db31b7e {
   height: 2.5vh;
@@ -48,4 +49,9 @@
   width: 100%;
   height: 0.1vh;
   background: #e6e6e6;
+}
+.txt.data-v-2db31b7e {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
