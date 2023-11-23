@@ -1,1 +1,0 @@
-<view class="login-container"><view class="container"><image class="logo" src="/static/icons/微信.svg"></image></view><view class="login-button-container"><van-button wx:if="{{r0}}" class="login" u-t="m" u-i="35a2d6a9-0" bind:__l="__l" u-p="{{a}}">微信登录</van-button></view></view>
