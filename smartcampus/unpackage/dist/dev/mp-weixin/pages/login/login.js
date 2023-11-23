@@ -35,15 +35,37 @@ const _sfc_main = {
             common_vendor.index.setStorageSync("openId", res.data.openId);
             common_vendor.index.setStorageSync("sessionKey", res.data.sessionKey);
             alertDialog.value.close();
-            common_vendor.index.navigateTo({
-              url: "/pages/login/getUserInfo/getUserInfo"
-            });
+            toInfoPage(res.data.openId);
           }
         }
       });
     };
     const dialogClose = () => {
       alertDialog.value.close();
+    };
+    const toInfoPage = async (openid) => {
+      let res = await utils_http.http(`/user/info?openid=${openid}`, "GET").catch((err) => {
+        wxcomponents_vantWeapp_dist_toast_toast.Toast.fail("请检查网络");
+      });
+      if (res.code && res.code === true) {
+        if (res.data.flag === 0) {
+          alertDialog.value.close();
+          common_vendor.index.navigateTo({
+            url: "/pages/login/getUserInfo/getUserInfo"
+          });
+        } else {
+          if (res.data.sno != null) {
+            common_vendor.index.setStorageSync("user", res.data);
+            common_vendor.index.reLaunch({
+              url: "/pages/index/index"
+            });
+          } else {
+            common_vendor.index.navigateTo({
+              url: "/pages/login/UserBinding"
+            });
+          }
+        }
+      }
     };
     return (_ctx, _cache) => {
       return {

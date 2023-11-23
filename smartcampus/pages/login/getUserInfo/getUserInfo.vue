@@ -14,6 +14,7 @@
 		<view style="font-size: 24rpx;color: red;padding: 20rpx;">信息只能修改一次，请妥善保存。</view>
 		<van-button type="primary" style="font-size: 28rpx;position: fixed;bottom: 50vh;width: 200rpx;left: 42%;"
 			@click="handleSave">保存</van-button>
+
 	</view>
 </template>
 
@@ -24,7 +25,7 @@
 	} from 'vue';
 	import http from '../../../utils/http';
 	import url from '@/utils/ip.js'
-	let avatar = ref('')
+	let avatar = ref('https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg')
 	let img = ref('https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg')
 	let nickname = ref('微信用户')
 
@@ -35,18 +36,33 @@
 			filestr: avatar.value,
 			dataurl: 'data:image/jpg;base64'
 		})
-		if (res.code === true)
-			img.value = url+res.data.url
+		if (res.code === true) {
+			avatar.value = res.data.url
+			img.value = url + res.data.url
+		} else
+			uni.showToast({
+				icon: "exception",
+				duration: 2000,
+				title: "上传失败"
+			})
 	}
 
 	const handleSave = async () => {
 		let res = await http("/user/upload", "POST", {
-
+			openid: uni.getStorageSync('openId'),
+			nickname: nickname.value,
+			avatarUrl: avatar.value
 		})
-
-		// uni.navigateTo({
-		// 	url: '/pages/login/UserBinding'
-		// })
+		if (res.code === true)
+			uni.navigateTo({
+				url: '/pages/login/UserBinding'
+			})
+		else
+			uni.showToast({
+				icon: "exception",
+				duration: 2000,
+				title: "保存失败，请检查网络"
+			})
 	}
 </script>
 

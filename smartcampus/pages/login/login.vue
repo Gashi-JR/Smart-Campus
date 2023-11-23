@@ -44,9 +44,7 @@
 					uni.setStorageSync('openId', res.data.openId);
 					uni.setStorageSync('sessionKey', res.data.sessionKey);
 					alertDialog.value.close()
-					uni.navigateTo({
-						url: '/pages/login/getUserInfo/getUserInfo'
-					})
+					toInfoPage(res.data.openId)
 				}
 			}
 		});
@@ -54,6 +52,30 @@
 	}
 	const dialogClose = () => {
 		alertDialog.value.close()
+	}
+	const toInfoPage = async (openid) => {
+		let res = await http(`/user/info?openid=${openid}`, "GET").catch((err) => {
+			Toast.fail('请检查网络');
+		})
+		if (res.code && res.code === true) {
+			if (res.data.flag === 0) {
+				alertDialog.value.close()
+				uni.navigateTo({
+					url: '/pages/login/getUserInfo/getUserInfo'
+				})
+			} else {
+				if (res.data.sno != null) {
+					uni.setStorageSync('user',res.data)
+					uni.reLaunch({
+						url: '/pages/index/index'
+					})
+				} else {
+					uni.navigateTo({
+						url: '/pages/login/UserBinding'
+					})
+				}
+			}
+		}
 	}
 </script>
 

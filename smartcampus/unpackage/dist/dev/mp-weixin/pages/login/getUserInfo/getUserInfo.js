@@ -9,7 +9,7 @@ if (!Array) {
 const _sfc_main = {
   __name: "getUserInfo",
   setup(__props) {
-    let avatar = common_vendor.ref("");
+    let avatar = common_vendor.ref("https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg");
     let img = common_vendor.ref("https://gw.alipayobjects.com/zos/rmsportal/KDpgvguMpGfqaHPjicRK.svg");
     let nickname = common_vendor.ref("微信用户");
     const getAvatar = async (e) => {
@@ -18,11 +18,32 @@ const _sfc_main = {
         filestr: avatar.value,
         dataurl: "data:image/jpg;base64"
       });
-      if (res.code === true)
+      if (res.code === true) {
+        avatar.value = res.data.url;
         img.value = utils_ip.url + res.data.url;
+      } else
+        common_vendor.index.showToast({
+          icon: "exception",
+          duration: 2e3,
+          title: "上传失败"
+        });
     };
     const handleSave = async () => {
-      await utils_http.http("/user/upload", "POST", {});
+      let res = await utils_http.http("/user/upload", "POST", {
+        openid: common_vendor.index.getStorageSync("openId"),
+        nickname: nickname.value,
+        avatarUrl: avatar.value
+      });
+      if (res.code === true)
+        common_vendor.index.navigateTo({
+          url: "/pages/login/UserBinding"
+        });
+      else
+        common_vendor.index.showToast({
+          icon: "exception",
+          duration: 2e3,
+          title: "保存失败，请检查网络"
+        });
     };
     return (_ctx, _cache) => {
       return {

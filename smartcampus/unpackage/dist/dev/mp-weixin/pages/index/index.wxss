@@ -41,8 +41,9 @@
   z-index: 1;
   /*置于上层*/
   right: 20rpx;
+  width: 100%;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   top: 15rpx;
 }
@@ -54,6 +55,9 @@
   font-size: 30rpx;
   color: white;
   margin-left: 30rpx;
+}
+.content .logout.data-v-1cf27b2a {
+  margin-left: 40rpx;
 }
 .content .profile.data-v-1cf27b2a {
   position: absolute;

@@ -1,14 +1,54 @@
 "use strict";
 const common_vendor = require("../../common/vendor.js");
+const wxcomponents_vantWeapp_dist_notify_notify = require("../../wxcomponents/vant-weapp/dist/notify/notify.js");
+const utils_http = require("../../utils/http.js");
+require("../../wxcomponents/vant-weapp/dist/common/color.js");
+if (!Array) {
+  const _component_van_notify = common_vendor.resolveComponent("van-notify");
+  _component_van_notify();
+}
 const _sfc_main = {
   __name: "UserBinding",
   setup(__props) {
     let name = common_vendor.ref("");
-    let studentId = common_vendor.ref("");
-    let className = common_vendor.ref("");
+    let id = common_vendor.ref("");
+    let classId = common_vendor.ref("");
     let focus = common_vendor.ref(-1);
     const handleFocus = (index) => {
       focus.value = index;
+    };
+    const bind = async () => {
+      if (name.value.length > 0 && id.value.length > 0 && classId.value.length > 0) {
+        if (name.value.length <= 20 && id.value.length <= 20 && classId.value.length <= 20) {
+          let res = await utils_http.http("/user/bind", "POST", {
+            openid: common_vendor.index.getStorageSync("openId"),
+            name: name.value,
+            id: id.value,
+            classId: classId.value
+          });
+          if (res.code === true) {
+            common_vendor.index.setStorageSync("user", res.data);
+            common_vendor.index.reLaunch({
+              url: "/pages/index/index"
+            });
+          } else
+            common_vendor.index.showToast({
+              icon: "exception",
+              duration: 2e3,
+              title: "绑定失败，请检查网络"
+            });
+        } else {
+          wxcomponents_vantWeapp_dist_notify_notify.Notify({
+            type: "danger",
+            message: "字段长度超过20"
+          });
+        }
+      } else {
+        wxcomponents_vantWeapp_dist_notify_notify.Notify({
+          type: "danger",
+          message: "字段不能为空"
+        });
+      }
     };
     return (_ctx, _cache) => {
       return {
@@ -20,14 +60,17 @@ const _sfc_main = {
         f: common_vendor.unref(focus) == 1 ? 1 : "",
         g: common_vendor.o(($event) => handleFocus(1)),
         h: common_vendor.o(($event) => common_vendor.isRef(focus) ? focus.value = -1 : focus = -1),
-        i: common_vendor.unref(studentId),
-        j: common_vendor.o(($event) => common_vendor.isRef(studentId) ? studentId.value = $event.detail.value : studentId = $event.detail.value),
+        i: common_vendor.unref(id),
+        j: common_vendor.o(($event) => common_vendor.isRef(id) ? id.value = $event.detail.value : id = $event.detail.value),
         k: common_vendor.unref(focus) == 2 ? 1 : "",
         l: common_vendor.o(($event) => handleFocus(2)),
         m: common_vendor.o(($event) => common_vendor.isRef(focus) ? focus.value = -1 : focus = -1),
-        n: common_vendor.unref(className),
-        o: common_vendor.o(($event) => common_vendor.isRef(className) ? className.value = $event.detail.value : className = $event.detail.value),
-        p: common_vendor.o((...args) => _ctx.bind && _ctx.bind(...args))
+        n: common_vendor.unref(classId),
+        o: common_vendor.o(($event) => common_vendor.isRef(classId) ? classId.value = $event.detail.value : classId = $event.detail.value),
+        p: common_vendor.o(bind),
+        q: common_vendor.p({
+          id: "van-notify"
+        })
       };
     };
   }
