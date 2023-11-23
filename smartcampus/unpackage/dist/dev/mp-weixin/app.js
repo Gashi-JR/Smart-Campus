@@ -17,7 +17,7 @@ const _sfc_main = {
     console.log("App Hide");
   }
 };
-const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "D:/204/GGschool/smartcampus/App.vue"]]);
+const App = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__file", "G:/fronter/STUDY/UNIAPP/smartcampus/smartcampus/App.vue"]]);
 function createApp() {
   const app = common_vendor.createSSRApp(App);
   return {

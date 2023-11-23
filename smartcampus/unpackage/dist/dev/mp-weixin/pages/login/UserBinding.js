@@ -12,5 +12,5 @@ function _sfc_render(_ctx, _cache) {
     g: common_vendor.o((...args) => _ctx.bind && _ctx.bind(...args))
   };
 }
-const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "D:/204/GGschool/smartcampus/pages/login/UserBinding.vue"]]);
+const MiniProgramPage = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "G:/fronter/STUDY/UNIAPP/smartcampus/smartcampus/pages/login/UserBinding.vue"]]);
 wx.createPage(MiniProgramPage);
