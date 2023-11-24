@@ -2,7 +2,7 @@
 	<view class="card">
 		<view style="width:100%;margin-top:1vh; display: flex;justify-content: space-between;align-items: center;">
 			<text style="font-size: 25rpx;color: rgba(0,0,0,0.6);margin-left: 20rpx;">{{props.title}}</text>
-			<button class="btn" v-if="props.showBtn">{{props.btnTxt}}</button>
+			<button class="btn" v-if="props.showBtn" @click.stop="props.click">{{props.btnTxt}}</button>
 		</view>
 
 		<view class="divider">
@@ -36,7 +36,8 @@
 		content: String,
 		takeAddr: String,
 		submitAddr: String,
-		btnTxt: String
+		btnTxt: String,
+		click: Function
 	})
 </script>
 

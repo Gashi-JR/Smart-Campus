@@ -87,7 +87,8 @@
 		ref
 	} from "vue";
 	import {
-		onLoad
+		onLoad,
+		onShow
 	} from "@dcloudio/uni-app"
 	import ip from '@/utils/ip.js'
 	const user = ref(null)
@@ -96,6 +97,9 @@
 		console.log(user.value)
 	})
 	onMounted(() => {
+		user.value = uni.getStorageSync("user")
+	})
+	onShow(() => {
 		user.value = uni.getStorageSync("user")
 	})
 	const toElec = () => {

@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@vant/weapp": "^1.11.1"
+    "@vant/weapp": "^1.11.1",
+    "lodash": "^4.17.21"
   }
 }
-

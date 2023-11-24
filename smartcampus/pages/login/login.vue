@@ -66,8 +66,7 @@
 			} else {
 				if (res.data.sno != null) {
 					uni.setStorageSync('user',res.data)
-					uni.reLaunch({
-						url: '/pages/index/index'
+					uni.navigateBack({
 					})
 				} else {
 					uni.navigateTo({

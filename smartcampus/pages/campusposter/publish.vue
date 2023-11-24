@@ -37,43 +37,63 @@
 			<button class="mini-btn" type="default" size="mini" style="color: rgb(215, 44, 44);margin: 0; "
 				@click="handleCancel">取消</button>
 		</view>
+
 	</view>
 </template>
 
 <script setup>
 	import {
+		onMounted,
 		ref
 	} from 'vue';
-	import Notify from '../../wxcomponents/vant-weapp/dist/notify/notify'
+	import {
+		onLoad,
+		onShow
+	} from "@dcloudio/uni-app"
+	import http from '@/utils/http.js'
 	let content = ref('')
 	let takeAddr = ref('')
 	let getAddr = ref('')
 	let takeTime = ref('')
 	let context = ref('')
 	let info = ref('')
+	let user = ref(null)
+	onMounted(() => {
+		user.value = uni.getStorageSync('user')
+	})
+	onShow(() => {
+		user.value = uni.getStorageSync('user')
+	})
 	const handlePublish = () => {
-		if (content.value != '' && takeAddr.value != '' && getAddr.value != '' && takeTime.value != '' && context.value !=
-			'' && info.value != '') {
-			console.log({
-				content: content.value,
-				takeAddr: takeAddr.value,
-				getAddr: getAddr.value,
-				takeTime: takeTime.value,
-				context: context.value,
-				info: info.value
-			});
-			Notify({
-				type: 'success',
-				message: '发布成功',
-				selector: '.notify'
-			});
+		if (uni.getStorageSync('user') == "") {
+			uni.navigateTo({
+				url: '/pages/login/login'
+			})
+			uni.showToast({
+				title: "请先登录",
+				icon: 'error'
+			})
 		} else {
-			Notify({
-				type: 'danger',
-				message: '请输入完整信息',
-				selector: '.notify'
-			});
+			if (content.value != '' && takeAddr.value != '' && getAddr.value != '' && takeTime.value != '' && context
+				.value != '' && info.value != '') {
+				if ((content.value <= 100) && (takeAddr.value <= 20) && (getAddr.value <= 20) && (context.value <= 20) && (info
+						.value <= 100)) {
+					Publish()
+				} else {
+					uni.showToast({
+						title: "输入字段超出限制",
+						icon: 'error'
+					})
+				}
+
+			} else {
+				uni.showToast({
+					title: "请输入完整信息",
+					icon: 'error'
+				})
+			}
 		}
+
 	}
 	const handleCancel = () => {
 		console.log('cancel');
@@ -84,6 +104,32 @@
 		takeTime.value = ''
 		context.value = ''
 		info.value = ''
+	}
+	const Publish = async () => {
+		let res = await http(`/deliverOrder/save`, "POST", {
+			clientId: user.value.id,
+			content: content.value,
+			takeAddr: takeAddr.value,
+			getAddr: getAddr.value,
+			takeTime: takeTime.value,
+			context: context.value,
+			info: info.value
+		}, false)
+
+		console.log(res.code);
+		if (res.code) {
+			handleCancel()
+			uni.$emit('completePublish')
+			uni.showToast({
+				icon: 'success',
+				title: '发布成功'
+			})
+		} else {
+			uni.showToast({
+				icon: 'error',
+				title: '发布失败，请检查网络连接'
+			})
+		}
 	}
 </script>
 
