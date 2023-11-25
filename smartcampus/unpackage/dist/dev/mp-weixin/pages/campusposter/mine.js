@@ -49,5 +49,5 @@ const _sfc_main = {
     };
   }
 };
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-33c8d6d9"], ["__file", "D:/weixinkaifa/Smart-Campus/smartcampus/pages/campusposter/mine.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["__scopeId", "data-v-33c8d6d9"], ["__file", "G:/fronter/STUDY/UNIAPP/smartcampus/smartcampus/pages/campusposter/mine.vue"]]);
 wx.createComponent(Component);

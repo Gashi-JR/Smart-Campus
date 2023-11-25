@@ -268,5 +268,5 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     p: common_vendor.o((...args) => $options.clickRight && $options.clickRight(...args))
   });
 }
-const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-88b7506d"], ["__file", "D:/weixinkaifa/Smart-Campus/smartcampus/uni_modules/uni-pagination/components/uni-pagination/uni-pagination.vue"]]);
+const Component = /* @__PURE__ */ common_vendor._export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-88b7506d"], ["__file", "G:/fronter/STUDY/UNIAPP/smartcampus/smartcampus/uni_modules/uni-pagination/components/uni-pagination/uni-pagination.vue"]]);
 wx.createComponent(Component);
