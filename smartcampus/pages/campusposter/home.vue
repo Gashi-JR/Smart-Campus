@@ -1,14 +1,10 @@
 <template>
-	<view class="content">
-		<EntrustCard title="委托人" :showBtn="true" content="快递为XXX，大小大概为XXXXX" takeAddr="xxxxxx" submitAddr="xxxxxxxx"
-			style="margin-top: 1vh;margin-bottom: 2vh;" btnTxt="取消发布">
-		</EntrustCard>
-		<EntrustCard title="委托人" :showBtn="false" content="快递为XXX，大小大概为XXXXX" takeAddr="xxxxxx" submitAddr="xxxxxxxx"
-			style="margin-top: 1vh;margin-bottom: 2vh;" btnTxt="取消接单">
-		</EntrustCard>
-		<view class="" @click="toDetail">
-			<EntrustCard title="委托人" :showBtn="false" content="快递为XXX，大小大概为XXXXX" takeAddr="xxxxxx" submitAddr="xxxxxxxx"
-				style="margin-top: 1vh;margin-bottom: 2vh;" btnTxt="取消发布">
+	<view class="content" >
+
+		<view @click="toDetail(item.id)" v-for="(item,index) in data" :key="index"
+			style="margin-top: 1vh;margin-bottom: 2vh;">
+			<EntrustCard title="委托人" :showBtn="false" :content="item.thingDesc" :takeAddr="item.pickAddress"
+				:submitAddr="item.deliveryAddress">
 			</EntrustCard>
 		</view>
 
@@ -16,13 +12,50 @@
 </template>
 
 <script setup>
+	import {
+		onMounted,
+		ref
+	} from 'vue';
 	import entrustcard from '/components/EntrustCard/EntrustCard.vue'
-	const toDetail = () => {
-		uni.navigateTo({
-			url: '/pages/campusposter/posterdetail/posterdetail'
-		});
+	import http from '@/utils/http.js'
+	import {
+		onLoad,
+		onPullDownRefresh
+	} from "@dcloudio/uni-app"
+	let data = ref()
 
+	const toDetail = (id) => {
+		console.log(uni.getStorageSync('user'));
+		if (uni.getStorageSync('user') == "") {
+			uni.navigateTo({
+				url: '/pages/login/login'
+			})
+			uni.showToast({
+				title: "请先登录",
+				icon: 'error'
+			})
+		} else {
+			uni.navigateTo({
+				url: `/pages/campusposter/posterdetail/posterdetail?id=${id}`
+			});
+		}
 	}
+
+	const getData = async () => {
+		let res = await http("/deliverOrder/all", "GET", {}, false)
+		data.value = res.data
+		console.log(res.data);
+	}
+	onLoad(async () => {
+		console.log(222);
+		getData()
+	})
+	onMounted(() => {
+		getData()
+	})
+	onPullDownRefresh(() => {
+		getData()
+	})
 </script>
 
 <style lang="scss" scoped>

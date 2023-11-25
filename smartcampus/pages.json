@@ -7,6 +7,7 @@
 			}
 		},
 		{
+
 			"path": "pages/onlinefix/onlinefix",
 			"style": {
 				"navigationBarTitleText": "网上报修",
@@ -26,6 +27,18 @@
 			"style": {
 				"navigationBarTitleText": "委托详情",
 				"enablePullDownRefresh": false
+				}
+		},
+	{
+			"path": "pages/login/login",
+			"style": {
+				"navigationBarTitleText": "用户登录"
+			}
+		},
+		{
+			"path": "pages/login/UserBinding",
+			"style": {
+				"navigationBarTitleText": "绑定、班级学号"
 			}
 		},
 		{
@@ -43,9 +56,26 @@
 				"navigationBarTitleText" : "充值",
 				"enablePullDownRefresh" : false
 			}
+		},
+		{
+			"path" : "pages/onlinefix/myfixdetail/myfixdetail",
+			"style" : 
+			{
+				"navigationBarTitleText" : "我的报修单详情",
+				"enablePullDownRefresh" : false
+			}
+		},
+		{
+			"path" : "pages/login/getUserInfo/getUserInfo",
+			"style" : 
+			{
+				"navigationBarTitleText" : "完善个人信息",
+				"enablePullDownRefresh" : false
+			}
 		}
-
 	],
+
+
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
@@ -97,9 +127,11 @@
 			"van-rate": "/wxcomponents/vant-weapp/dist/rate/index",
 			"van-collapse": "/wxcomponents/vant-weapp/dist/collapse/index",
 			"van-collapse-item": "/wxcomponents/vant-weapp/dist/collapse-item/index",
-			"van-picker": "/wxcomponents/vant-weapp/dist/picker/index"
+			"van-picker": "/wxcomponents/vant-weapp/dist/picker/index",
+			"van-uploader": "/wxcomponents/vant-weapp/dist/uploader/index"
 
 		}
 	},
 	"uniIdRouter": {}
 }
+

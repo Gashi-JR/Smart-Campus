@@ -1,1 +1,0 @@
-"use strict";const e=require("../../common/vendor.js");if(!Array){e.resolveComponent("uni-datetime-picker")()}Math;const t={__name:"publish",setup(t){e.ref("adada");let a=e.ref("");return(t,r)=>({a:e.o((t=>e.isRef(a)?a.value=t:a=t)),b:e.p({type:"datetime",modelValue:e.unref(a)})})}},a=e._export_sfc(t,[["__scopeId","data-v-d1a85275"]]);wx.createComponent(a);
