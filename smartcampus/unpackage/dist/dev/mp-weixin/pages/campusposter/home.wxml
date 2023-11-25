@@ -1,0 +1,1 @@
+<view class="content data-v-2ebcc0d9"><view wx:for="{{a}}" wx:for-item="item" wx:key="d" class="data-v-2ebcc0d9" bindtap="{{item.c}}" style="margin-top:1vh;margin-bottom:2vh"><entrust-card wx:if="{{item.b}}" class="data-v-2ebcc0d9" u-i="{{item.a}}" bind:__l="__l" u-p="{{item.b}}"></entrust-card></view></view>

@@ -1,52 +1,43 @@
 <template>
-	<view>
-		<view class="container">
-			<input v-model="searchVal" type="text" :class="{'search':true,'focus':focus==1,'unfocus':focus==0}"
-				@focus="handleFocus(1)" @blur="focus=0" />
-			<button plain class="btn" @click="search">查询</button>
-			<button plain class="btn" @click="toRecharge">充值</button>
+	<view class="" style="height: 98vh; overflow: scroll;">
+		<view>
+			<view class="container">
+				<input v-model="searchVal" type="text" :class="{'search':true,'focus':focus==1,'unfocus':focus==0}"
+					@focus="handleFocus(1)" @blur="focus=0" />
+				<button plain class="btn" @click="handleSearch">查询</button>
+				<button plain class="btn" @click="toRecharge">充值</button>
+			</view>
+			<view style="padding-left: 27rpx; margin-bottom: 3vh;"><text
+					style="color: rgb(243, 138, 138); font-size: 25rpx;">提示：请输入需要查询的对应宿舍号</text></view>
 		</view>
-		<view style="padding-left: 27rpx; margin-bottom: 3vh;"><text
-				style="color: rgb(243, 138, 138); font-size: 25rpx;">提示：请输入需要查询的对应宿舍号</text></view>
 
-
-
+		<view class="table-container">
+			<view class="table-header">
+				<view class="table-cell">
+					<strong>日期</strong>
+				</view>
+				<view class="table-cell">
+					<strong>电量记录</strong>
+				</view>
+				<view class="table-cell">
+					<strong>电费余额</strong>
+				</view>
+			</view>
+			<view v-for="(item, index) in tableData" :key="index" class="table-row">
+				<view class="table-cell">
+					{{ item.recordTime }}
+				</view>
+				<view class="table-cell">
+					{{ item.dumpEnergy }}
+				</view>
+				<view class="table-cell">
+					{{ item.surplus }}
+				</view>
+			</view>
+		</view>
 	</view>
 
-	<view class="table-container">
-		<view class="table-header">
-			<view class="table-cell">
-				<strong>日期</strong>
-			</view>
-			<view class="table-cell">
-				<strong>电量记录</strong>
-			</view>
-			<view class="table-cell">
-				<strong>电费余额</strong>
-			</view>
-		</view>
-		<view v-for="(item, index) in tableData" :key="index" class="table-row">
-			<view class="table-cell">
-				{{ item.date }}
-			</view>
-			<view class="table-cell">
-				{{ item.electricityRecord }}
-			</view>
-			<view class="table-cell">
-				{{ item.remainingBalance }}
-			</view>
-		</view>
-	</view>
 
-
-
-
-	<view style="padding: 20rpx;
-	margin-top: 10vh;">
-		<uni-section title="默认样式" type="line" padding>
-			<uni-pagination :total="50" title="标题文字" />
-		</uni-section>
-	</view>
 </template>
 
 <script setup>
@@ -54,74 +45,52 @@
 		onMounted,
 		ref
 	} from 'vue';
-	import uniPagination from '../../uni_modules/uni-pagination/components/uni-pagination/uni-pagination.vue'
-	const tableData = [{
-			date: '2023-11-01',
-			electricityRecord: '100 kWh',
-			remainingBalance: '$50'
-		},
-		{
-			date: '2023-11-02',
-			electricityRecord: '95 kWh',
-			remainingBalance: '$45'
-		},
-		{
-			date: '2023-11-03',
-			electricityRecord: '110 kWh',
-			remainingBalance: '$55'
-		},
-		{
-			date: '2023-11-04',
-			electricityRecord: '98 kWh',
-			remainingBalance: '$48'
-		},
-		{
-			date: '2023-11-05',
-			electricityRecord: '102 kWh',
-			remainingBalance: '$52'
-		},
-		{
-			date: '2023-11-06',
-			electricityRecord: '105 kWh',
-			remainingBalance: '$54'
-		},
-		{
-			date: '2023-11-07',
-			electricityRecord: '97 kWh',
-			remainingBalance: '$47'
-		},
-		{
-			date: '2023-11-07',
-			electricityRecord: '97 kWh',
-			remainingBalance: '$47'
-		},
-		{
-			date: '2023-11-10',
-			electricityRecord: '99 kWh',
-			remainingBalance: '$49'
+	import http from '@/utils/http.js'
+	import _ from 'lodash'
+	const tableData = ref(null)
+
+	onMounted(() => {})
+
+	const getData = async () => {
+		uni.showLoading({})
+		let res = await http(`/dor/info`, "POST", {
+			dormitoryId: searchVal.value
+		}, false)
+
+		uni.hideLoading({})
+
+		if (res.code) {
+			console.log(res.data);
+			tableData.value = _.sortBy(res.data, item => -Date.parse(item.recordTime))
+		} else {
+			uni.showToast({
+				title: '查询失败',
+				icon: 'error'
+			})
 		}
-	];
+	}
 
+	const dorId = /^(2[5-9]|3[0-2])#([1-6][0-2][0-9])$/
 
-
-
-
-	let current = ref(3)
-	let total = ref(10)
-	let pageSize = ref(10)
 	let focus = ref(0)
-
+	let searchVal = ref('')
 
 	const handleFocus = (index) => {
 		focus.value = index
 	}
 
-	onMounted(() => {
-		setTimeout(() => {
-			current.value = 5
-		}, 3000)
-	})
-
+	const handleSearch = () => {
+		if (dorId.test(searchVal.value)) {
+			console.log(dorId.test(searchVal.value));
+			getData()
+		} else {
+			console.log(dorId.test(searchVal.value));
+			uni.showToast({
+				icon: 'error',
+				title: '提示:25#101'
+			})
+		}
+	}
 	const toRecharge = () => {
 		uni.navigateTo({
 			url: '/pages/electric/recharge/recharge'
