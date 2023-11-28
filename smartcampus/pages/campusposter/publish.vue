@@ -76,8 +76,8 @@
 		} else {
 			if (content.value != '' && takeAddr.value != '' && getAddr.value != '' && takeTime.value != '' && context
 				.value != '' && info.value != '') {
-				if ((content.value <= 100) && (takeAddr.value <= 20) && (getAddr.value <= 20) && (context.value <= 20) && (info
-						.value <= 100)) {
+				if ((content.value.length <= 100) && (takeAddr.value.length <= 20) && (getAddr.value.length <= 20) && (context.value.length <= 20) && (info
+						.value.length <= 100)) {
 					Publish()
 				} else {
 					uni.showToast({

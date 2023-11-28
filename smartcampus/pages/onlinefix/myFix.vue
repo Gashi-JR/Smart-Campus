@@ -1,30 +1,71 @@
 <template>
 	<view class="container">
-		<view style="margin-bottom: 20rpx;" @click="toFixDetail">
-			<MyfixCard id="003" :status="false" time="2033-03-10 20:30:19" hoster="陈小陈" addr="c区16栋399" phone="12345678907"
-				type="五金"></MyfixCard>
+		<view style="margin-bottom: 20rpx;" @click="toFixDetail(item.id)" v-for="item in data" :key="item.id">
+			<MyfixCard :id="`00${item.id}`" :status="Boolean(item.status)" :time="item.createTime" :hoster="item.name"
+				:addr="item.errorPos" :phone="item.phone" :type="item.faultItem"></MyfixCard>
 		</view>
-		<view style="margin-top: 20rpx;margin-bottom: 20rpx;">
-			<MyfixCard id="003" :status="true" time="2033-03-10 20:30:19" hoster="陈小陈" addr="c区16栋399" phone="12345678907"
-				type="五金"></MyfixCard>
-		</view>
-		<view style="margin-top: 20rpx;margin-bottom: 20rpx;">
-			<MyfixCard id="003" :status="true" time="2033-03-10 20:30:19" hoster="陈小陈" addr="c区16栋399" phone="12345678907"
-				type="五金"></MyfixCard>
-		</view>
+
 
 	</view>
 </template>
 
 <script setup>
 	import MyfixCard from '@/components/MyfixCard/MyfixCard.vue'
-	const toFixDetail=()=>{
+	import {
+		ref,
+		onMounted,
+		watch
+	} from 'vue';
+	import {
+		onLoad,
+		onShow
+	} from "@dcloudio/uni-app"
+	import _ from 'lodash'
+	import http from '@/utils/http.js'
+	const toFixDetail = (id) => {
 		uni.navigateTo({
-			url:'/pages/onlinefix/myfixdetail/myfixdetail'
+			url: `/pages/onlinefix/myfixdetail/myfixdetail?id=${id}`
 		})
 	}
-	
-	
+	let user = ref(null)
+	let data = ref([])
+	onShow(() => {
+		if (uni.getStorageSync('user') == "") {
+			uni.redirectTo({
+				url: '/pages/login/login'
+			})
+			uni.showToast({
+				title: "请先登录",
+				icon: 'error'
+			})
+		} else {
+			user.value = uni.getStorageSync('user')
+			getData()
+		}
+
+	})
+
+	onMounted(() => {
+		if (uni.getStorageSync('user') == "") {
+			uni.redirectTo({
+				url: '/pages/login/login'
+			})
+			uni.showToast({
+				title: "请先登录",
+				icon: 'error'
+			})
+		} else {
+			user.value = uni.getStorageSync('user')
+			getData()
+		}
+
+	})
+	const getData = async () => {
+		uni.showLoading({})
+		let res = await http(`/fix/my_fix/${user.value.id}`, "GET", {}, false)
+		data.value = _.sortBy(res.data, item => -Date.parse(item.createTime))
+		uni.hideLoading()
+	}
 </script>
 
 <style lang="scss" scoped>

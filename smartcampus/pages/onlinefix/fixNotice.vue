@@ -1,5 +1,5 @@
 <template>
-	<view style="padding: 20rpx;font-size: 28rpx;line-height: 4vh;">
+	<view style="padding: 20rpx;font-size: 28rpx;line-height: 4vh;height: 100vh;">
 		<view style="width:100%;   
           text-align: justify;">
 			<view style="color: gold;">请仔细阅读如下须知：</view>

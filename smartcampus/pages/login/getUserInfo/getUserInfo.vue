@@ -48,21 +48,28 @@
 	}
 
 	const handleSave = async () => {
-		let res = await http("/user/upload", "POST", {
-			openid: uni.getStorageSync('openId'),
-			nickname: nickname.value,
-			avatarUrl: avatar.value
-		})
-		if (res.code === true)
-			uni.navigateTo({
-				url: '/pages/login/UserBinding'
+		if (nickname.value.length <= 20) {
+			let res = await http("/user/upload", "POST", {
+				openid: uni.getStorageSync('openId'),
+				nickname: nickname.value,
+				avatarUrl: avatar.value
 			})
-		else
+			if (res.code === true)
+				uni.navigateTo({
+					url: '/pages/login/UserBinding'
+				})
+			else
+				uni.showToast({
+					icon: "exception",
+					duration: 2000,
+					title: "保存失败，请检查网络"
+				})
+		} else {
 			uni.showToast({
-				icon: "exception",
-				duration: 2000,
-				title: "保存失败，请检查网络"
+				icon: "error",
+				title: "昵称长度超过20"
 			})
+		}
 	}
 </script>
 

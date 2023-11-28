@@ -141,30 +141,15 @@
 		active.value = 1
 	});
 
-
-	// watch(active, (curVal, preVal) => {
-	// 	console.log(preVal);
-	// 	console.log(curVal);
-	// })
-
-
 	onShow(() => {
-		if (uni.getStorageSync('user') == "") {
-			uni.navigateTo({
-				url: '/pages/login/login'
-			})
-			uni.showToast({
-				title: "请先登录",
-				icon: 'error'
-			})
-		} else {
-			user.value = uni.getStorageSync('user')
-		}
+
+		user.value = uni.getStorageSync('user')
+
 	})
 
 	onMounted(() => {
 		if (uni.getStorageSync('user') == "") {
-			uni.navigateTo({
+			uni.redirectTo({
 				url: '/pages/login/login'
 			})
 			uni.showToast({
